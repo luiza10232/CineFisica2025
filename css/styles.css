@@ -1,0 +1,299 @@
+/* --- RESET BÁSICO --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- CORPO --- */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #001f3f, #000814);
+  color: #e0f7fa;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* evita corte lateral no celular */
+}
+
+/* --- BARRA DE NAVEGAÇÃO (HEADER) --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #001f3f;
+  border-bottom: 2px solid #29b6f6;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: #29b6f6;
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 0;
+}
+
+/* --- ÍCONE AO LADO DO TEXTO --- */
+.logo-icon {
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+/* Links da navbar */
+.navbar a {
+  color: #e0f7fa;
+  text-decoration: none;
+  margin-right: 18px;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #29b6f6;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+.content {
+  flex: 1;
+  padding: 120px 50px 40px 50px;
+}
+
+.movie-row h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #29b6f6;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(41,182,246,0.6);
+}
+
+/* --- GRID DE FILMES --- */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.movie-card {
+  background-color: rgba(0, 31, 63, 0.8);
+  border: 2px solid #29b6f6;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #29b6f6;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  font-size: 16px;
+  color: #e0f7fa;
+  padding: 12px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+  background-color: #001f3f;
+  color: #e0f7fa;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  border-top: 2px solid #29b6f6;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- ANIMAÇÕES --- */
+.movie-card img {
+  transition: transform 0.3s ease;
+}
+
+.movie-card img:hover {
+  transform: scale(1.08);
+}
+
+/* --- TEXTO --- */
+.flow-text {
+  text-align: justify;
+}
+
+/* --- CORREÇÕES DE RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 30px;
+  }
+
+  .logo-icon {
+    height: 45px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .content {
+    padding: 100px 30px 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .content {
+    padding: 100px 20px 30px 20px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .movie-card img {
+    height: 240px;
+  }
+
+  .flow-text {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .logo-icon {
+    height: 35px;
+  }
+
+  .content {
+    padding: 90px 15px 30px 15px;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .movie-card {
+    width: 100%;
+  }
+
+  .movie-card img {
+    height: auto;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 25px 10px;
+  }
+}
+
+#intro h4 {
+  margin-bottom: 30px;
+}
+
+#intro p {
+  margin-top: 20px;
+}
+
+.screen {
+    background: url('../img/logo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.screen {
+    border: 4px solid #29b6f6;
+    border-radius: 10px;
+    height: 350px;
+    margin: 40px auto;
+    width: 85%;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    color: #29b6f6;
+    font-size: 1.8em;
+    font-weight: 500;
+    text-shadow: 0 0 10px #29b6f6;}
+
+    
+/* ======================================= */
+/* CÓDIGO DO BANNER CINEFÍSICA ADICIONADO */
+/* Garante que a logo.jpg seja exibida corretamente dentro do retângulo. */
+/* ======================================= */
+
+.cinefisica-banner-img {
+    /* Altura que define o tamanho do banner retangular */
+    height: 350px; 
+    
+    /* Centraliza e aplica margem */
+    position: relative;
+    margin: 40px auto; 
+    width: 85%; /* Largura para simular o quadro */
+
+    /* Borda e Sombra (copiado do seu antigo .screen) */
+    border: 4px solid #29b6f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+
+    /* Adiciona a imagem de fundo (Sua logo) */
+    /* ATENÇÃO: O caminho 'img/logo.jpg' funciona se style.css está na raiz */
+    background-image: url('img/logo.jpg'); 
+
+    /* A correção: 'contain' garante que a imagem inteira (quadrada) caiba no retângulo */
+    background-size: contain; 
+    
+    /* Garante que a logo fique no centro exato do container */
+    background-position: center center; 
+    background-repeat: no-repeat;
+    
+    /* Cor de fundo da div para preencher os espaços vazios ao lado da logo */
+    background-color: #0d47a1; 
+}
