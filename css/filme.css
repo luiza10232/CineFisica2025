@@ -75,36 +75,3 @@
     padding: 20px;
   }
 }
-/* ======================================= */
-/* CÓDIGO DO BANNER CINEFÍSICA ADICIONADO */
-/* Garante que a logo.jpg seja exibida corretamente dentro do retângulo. */
-/* ======================================= */
-
-.cinefisica-banner-img {
-    /* Altura que define o tamanho do banner retangular */
-    height: 350px; 
-    
-    /* Centraliza e aplica margem */
-    position: relative;
-    margin: 40px auto; 
-    width: 85%; /* Largura para simular o quadro */
-
-    /* Borda e Sombra (copiado do seu antigo .screen) */
-    border: 4px solid #29b6f6;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-
-    /* Adiciona a imagem de fundo (Sua logo) */
-    /* ATENÇÃO: O caminho 'img/logo.jpg' funciona se style.css está na raiz */
-    background-image: url('img/logo.jpg'); 
-
-    /* A correção: 'contain' garante que a imagem inteira (quadrada) caiba no retângulo */
-    background-size: contain; 
-    
-    /* Garante que a logo fique no centro exato do container */
-    background-position: center center; 
-    background-repeat: no-repeat;
-    
-    /* Cor de fundo da div para preencher os espaços vazios ao lado da logo */
-    background-color: #0d47a1; 
-}
