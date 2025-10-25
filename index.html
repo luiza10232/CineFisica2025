@@ -16,26 +16,38 @@
 
     <nav class="blue darken-3 z-depth-2">
         <div class="nav-wrapper container">
-        <a href="#!" class="brand-logo light-blue-text text-lighten-3">
-    <img src="img/fito.png" alt="CineFísica Logo" class="logo-icon">
-    CineFísica
-</a>
+            <!-- LOGO / TÍTULO (sempre visível) -->
+            <a href="#!" class="brand-logo light-blue-text text-lighten-3">
+                <img src="img/fito.png" alt="CineFísica Logo" class="logo-icon">
+                CineFísica
+            </a>
 
+            <!-- BOTÃO DO MENU (HAMBÚRGUER) PARA MOBILE -->
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
 
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#intro" class="light-blue-text text-lighten-3">Introdução</a></li>
-            <li><a href="#filmes" class="light-blue-text text-lighten-3">Filmes</a></li>
-          </ul>
+            <!-- MENU DESKTOP -->
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#intro" class="light-blue-text text-lighten-3">Introdução</a></li>
+                <li><a href="#filmes" class="light-blue-text text-lighten-3">Filmes</a></li>
+            </ul>
         </div>
     </nav>
 
+    <!-- MENU MOBILE (sidenav) -->
+    <ul class="sidenav blue-grey darken-4" id="mobile-menu">
+        <li><a href="#intro" class="light-blue-text text-lighten-3">Introdução</a></li>
+        <li><a href="#filmes" class="light-blue-text text-lighten-3">Filmes</a></li>
+    </ul>
+
     <div class="cinefisica-banner-img">
-        </div>
+    </div>
     <section id="intro" class="section container">
         <h2 class="light-blue-text text-lighten-3 center-align">Introdução ao CineFísica</h2>
         <div class="screen z-depth-4">
 
- </div>
+        </div>
         <p class="flow-text justify-text">
             Bem-vindo ao cinema da física! Aqui, você assiste a filmes clássicos e modernos que exploram conceitos científicos, combinando entretenimento com aprendizado. Cada filme inclui trailer, sinopse e explicações sobre os princípios físicos envolvidos. Prepare-se para uma jornada imersiva!
 <br><br>
@@ -143,6 +155,15 @@ O trabalho foi realizado pelos alunos da Instituição Tecnológica de Osasco, d
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Inicializa o sidenav (menu mobile) -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+      });
+    </script>
+
     <script src="js/script.js"></script>
 </body>
 </html>
