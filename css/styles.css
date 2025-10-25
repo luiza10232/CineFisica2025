@@ -262,26 +262,40 @@ footer {
     font-size: 1.8em;
     font-weight: 500;
     text-shadow: 0 0 10px #29b6f6;}
-/* ================================================= */
-/* CORREÇÃO DE ALINHAMENTO PARA TELAS MENORES (<= 600px) */
-/* Garante que o banner comece abaixo da Navbar, que é mais alta no celular. */
-/* ================================================= */
-@media (max-width: 600px) {
-    /*
-     * A Navbar é mais alta no celular (por volta de 100px). 
-     * Usamos uma margem superior maior para garantir que o banner não fique escondido.
-     */
-    .cinefisica-banner-img {
-        /* Aumentamos o top margin para empurrar o banner para baixo da navbar */
-        margin-top: 130px; 
-    }
-}
-/* Se você precisar de um breakpoint ainda mais específico */
-@media (max-width: 450px) {
-    .cinefisica-banner-img {
-        margin-top: 150px; /* Aumente este valor se 130px não for suficiente no celular */
-    }
+
+/* ================================================================= */
+/* CORREÇÃO DE ALINHAMENTO DA LOGO E TEXTO NA NAVBAR (MOBILE) */
+/* Garante que o texto 'CineFísica' fique ao lado do ícone no topo */
+/* ================================================================= */
+
+/* Aplica o alinhamento flexbox para que a imagem e o texto fiquem lado a lado */
+.brand-logo {
+    display: flex;       
+    align-items: center; 
+    /* Garante que o texto não seja empurrado para a próxima linha se houver espaço */
+    white-space: nowrap; 
 }
 
+/* Ajusta a largura para dispositivos menores (como iPhone 11 - 414px) */
+@media (max-width: 350px) {
+    /* Diminui o padding da Navbar, se necessário, para liberar espaço horizontal */
+    .navbar {
+        padding: 10px 10px; 
+    }
     
-
+    /* Reduz o tamanho da logo no mobile para que o texto caiba ao lado */
+    .logo-icon {
+        height: 30px; 
+        margin-right: 4px;
+    }
+    
+    /* Reduz o tamanho da fonte do título no mobile */
+    .logo {
+        font-size: 20px; 
+    }
+    
+    /* Corrige o padding-top do body para telas muito pequenas */
+    body {
+        padding-top: 50px; /* Reduz de 140px para 100px se a Navbar estiver mais compacta */
+    }
+}
